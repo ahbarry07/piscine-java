@@ -14,14 +14,20 @@ public class CleanExtract {
 
         for(int j = 1; j < array.length; j++){
             if((array[j].startsWith(".") && array[j].endsWith(".") || array[j].startsWith("."))){
-                goodWord += " " + array[j].substring(1, array[j].length()).trim().replace(".", "").trim();
+                goodWord += " " + array[j].trim().replace(".", "").trim();
+            }else if(!array[j].startsWith(".") && !array[j].endsWith(".")){
+                for (String str : array[j].split("\\s")) {
+                    if (str.startsWith(".")){
+                        goodWord += " " + str.substring(1, str.length());
+                    }
+                }
             }
             if(j == array.length -1 && array[j].endsWith(".")){
-                goodWord = goodWord.trim() + ".";
+                goodWord += ".";
             }
         }
         
-        return goodWord;
+        return goodWord.trim();
     }
 
     public static void main(String[] args) {
