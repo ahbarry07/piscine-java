@@ -1,5 +1,6 @@
 public class CleanExtract {
     public static String extract(String s) {
+        System.out.println("input"+s);
         if(s == "" || s == null){
             return s;
         }
