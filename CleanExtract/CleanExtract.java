@@ -14,7 +14,7 @@ public class CleanExtract {
 
         for(int j = 1; j < array.length; j++){
             if(array[j].startsWith(".") && array[j].endsWith(".")){
-                goodWord += array[j].substring(1, array[j].length() - 1).trim().replace(".", "") + " ";
+                goodWord += " " + array[j].substring(1, array[j].length() - 1).trim().replace(".", "");
             }
         }
         
