@@ -1,29 +1,24 @@
 public class CleanExtract {
     public static String extract(String s) {
-        // Split the input string by '|'
-        String[] substrings = s.split("\\|");
-        StringBuilder result = new StringBuilder();
-        
-        // Iterate over each substring
-        for (String substring : substrings) {
-            // Find the first and last occurrence of '.'
-            int firstDot = substring.indexOf('.');
-            int lastDot = substring.lastIndexOf('.');
-            
-            if (firstDot != -1 && lastDot != -1 && firstDot != lastDot) {
-                // Extract the portion between the first and last '.'
-                String cleaned = substring.substring(firstDot + 1, lastDot).trim();
-                // Append the cleaned substring to the result
-                if (!cleaned.isEmpty()) {
-                    if (result.length() > 0) {
-                        result.append(" ");
-                    }
-                    result.append(cleaned);
-                }
+        if(s == "" || s == null){
+            return s;
+        }
+        String[] array = s.split("\\|");
+       
+        for(int i = 0; i < array.length; i++){
+            array[i] = array[i].trim();
+        }
+
+        String goodWord;
+        goodWord = array[0];
+
+        for(int j = 1; j < array.length; j++){
+            if(array[j].startsWith(".") && array[j].endsWith(".")){
+                goodWord += array[j].substring(1, array[j].length() - 1).trim().replace(".", "") + " ";
             }
         }
         
-        return result.toString().trim(); // Ensure no leading or trailing spaces
+        return goodWord.trim()+".";
     }
 
     public static void main(String[] args) {
