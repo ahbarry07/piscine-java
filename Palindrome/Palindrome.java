@@ -5,7 +5,7 @@ public class Palindrome {
             reverse = s.charAt(i) + reverse;
         }
 
-        return s.contentEquals(reverse);
+        return s.toLowerCase().contentEquals(reverse.toLowerCase());
     }
 
     public static void main(String[] args) {
