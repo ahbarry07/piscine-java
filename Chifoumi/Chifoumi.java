@@ -5,10 +5,8 @@ public class Chifoumi{
                 return ChifoumiAction.SCISSOR;
             case PAPER:
                 return ChifoumiAction.ROCK;
-            case SCISSOR:
-                return ChifoumiAction.PAPER;
             default:
-                break;
+                return ChifoumiAction.PAPER;
         }
     }
 }
