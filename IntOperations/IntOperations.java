@@ -3,7 +3,7 @@ public class IntOperations {
         return a + b;
     }
     public static int subtractTwoIntegers(int a, int b) {
-        return b - a;
+        return a - b;
     }
     public static int multiplyTwoIntegers(int a, int b) {
         return a * b;
