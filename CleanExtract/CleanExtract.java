@@ -1,5 +1,6 @@
 public class CleanExtract {
     public static String extract(String s) {
+        System.out.println("input "+s);
         if(s == "" || s == null){
             return s;
         }
@@ -33,7 +34,7 @@ public class CleanExtract {
     public static void main(String[] args) {
         System.out.println(extract(".The|. quick brown. | what do you ..| .fox .|. Jumps over the lazy dog. ."));
         System.out.println(extract("  | Who am .I  | .love coding,  |.|  .Coding is fun | ...  "));
-        System.out.println(extract("  | Who am .I  | .love coding,  |  |.  Coding is fun . | ...  "));
+        // System.out.println(extract("  | Who am .I  | .love coding,  |  |.  Coding is fun . | ...  "));
     }
 
 }
