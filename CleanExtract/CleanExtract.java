@@ -1,6 +1,6 @@
 public class CleanExtract {
     public static String extract(String s) {
-        System.out.println("input "+s);
+        // System.out.println("input "+s);
         if(s == "" || s == null){
             return s;
         }
@@ -23,7 +23,7 @@ public class CleanExtract {
                     }
                 }
             }
-            if(j == array.length -1 && array[j].endsWith(".")){
+            if(j == array.length -1 && array[j].endsWith(".") && goodWord.trim() != "") {
                 goodWord += ".";
             }
         }
