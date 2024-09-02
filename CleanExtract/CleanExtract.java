@@ -13,12 +13,15 @@ public class CleanExtract {
         goodWord = array[0].replace(".", "");
 
         for(int j = 1; j < array.length; j++){
-            if(array[j].startsWith(".") && array[j].endsWith(".")){
-                goodWord += " " + array[j].substring(1, array[j].length() - 1).trim().replace(".", "");
+            if((array[j].startsWith(".") && array[j].endsWith(".") || array[j].startsWith("."))){
+                goodWord += " " + array[j].substring(1, array[j].length()).trim().replace(".", "").trim();
+            }
+            if(j == array.length -1 && array[j].endsWith(".")){
+                goodWord = goodWord.trim() + ".";
             }
         }
         
-        return goodWord.trim()+".";
+        return goodWord;
     }
 
     public static void main(String[] args) {
