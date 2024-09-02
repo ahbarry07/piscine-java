@@ -19,7 +19,7 @@ public class CleanExtract {
                 for (String str : array[j].split("\\s")) {
                     if (str.startsWith(".")){
                         // System.out.println("enter");
-                        goodWord += " " + str.substring(1, str.length());
+                        goodWord += " " + str.substring(1, str.length()).trim();
                     }
                 }
             }
