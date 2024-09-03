@@ -25,7 +25,7 @@ public class DoOp {
                     if(val2 == 0){
                         return "Error";
                     }
-                    int result5 = val1 / val2;
+                    int result5 = val1 % val2;
                     return String.valueOf(result5);
                 default:
                     return "Error";
