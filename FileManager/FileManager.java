@@ -21,7 +21,7 @@ public class FileManager {
         }
         StringBuilder text = new StringBuilder();
         try(FileInputStream fis = new FileInputStream(file)){
-            byte[] buffer = new byte [2048];
+            byte[] buffer = new byte [4096];
             int byteRead;
             while ((byteRead = fis.read(buffer)) != -1) {
                 text.append(new String(buffer, 0, byteRead));
@@ -29,7 +29,7 @@ public class FileManager {
         }catch (IOException e) {
             System.out.println("An error occurred while reading the file: " + e.getMessage());
         }
-
+        System.out.println("test "+ text.toString());
         return text.toString().trim();
     }
     
