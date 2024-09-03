@@ -30,7 +30,7 @@ public class FileManager {
             System.out.println("An error occurred while reading the file: " + e.getMessage());
         }
         System.out.println("test "+ text.toString());
-        return text.toString().trim();
+        return text.toString().trim() + "\n";
     }
     
     public static void deleteFile(String fileName) {
