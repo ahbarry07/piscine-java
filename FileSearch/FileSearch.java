@@ -16,7 +16,7 @@ public class FileSearch {
                 if (file.isDirectory()) {
                     
                     String result = findFile(name, file);
-                    if (!result.equals("File not found")) {
+                    if (result != null) {
                         return result;
                     }
                 } else if (name.equalsIgnoreCase(file.getName())) {
@@ -24,7 +24,7 @@ public class FileSearch {
                 }
             }
         }
-        return "File not found";
+        return null;
     }
 
     public static void main(String[] args) throws IOException {
