@@ -2,22 +2,32 @@ import java.io.*;
 
 public class Cat {
     public static void cat(String[] args) throws IOException {
-        if (args.length == 0) {
+        // Check if a file path is provided
+        if (args.length < 1) {
             return;
         }
 
-        for (String filename : args) {
-            File file = new File(filename);
-            try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    System.out.println(line);
-                }
-            } catch (FileNotFoundException e) {
-                System.err.println("File not found: " + filename);
-            }
+        String filePath = args[0];
+        File file = new File(filePath);
+
+        // Check if the file exists
+        if (!file.exists()) {
+            System.out.println("File not found: " + filePath);
+            return;
         }
 
+        // Use a FileInputStream to handle binary content
+        try (FileInputStream fis = new FileInputStream(file)) {
+            byte[] buffer = new byte[4096]; // Adjust the buffer size as needed
+            int bytesRead;
+
+            // Read the file in chunks and write to the standard output
+            while ((bytesRead = fis.read(buffer)) != -1) {
+                System.out.write(buffer, 0, bytesRead);
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred while reading the file: " + e.getMessage());
+        }
     }
 
 
