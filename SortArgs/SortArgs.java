@@ -5,8 +5,8 @@ import java.util.Arrays;
 
 public class SortArgs {
     public static void sort(String[] args) {
-        Arrays.sort(args);
-        System.out.print(String.join(" ", args + "\n"));
+        Arrays.sort(args);;
+        System.out.print(String.join(" ", args)+"\n");
     }
 
      public static void main(String[] args) throws IOException {
@@ -20,7 +20,6 @@ public class SortArgs {
         System.setOut(defaultOut);
 
         String output = outputStream.toString();
-        // System.out.println("sort "+output);
         System.out.println(output.equals("1 2 3 4\n"));
     }
 
