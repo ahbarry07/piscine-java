@@ -32,7 +32,7 @@ public class DoOp {
                     return "Error";
             }
         }
-        return "it depend on the input.";
+        return "Error";
     }
 
     public static void main(String[] args) {
