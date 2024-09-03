@@ -12,7 +12,6 @@ public class CatInFile {
         
         String line;
         while ((line = reader.readLine()) != null) {
-            System.out.println("content " + line);
             file.write(line);
             file.newLine();
         }
