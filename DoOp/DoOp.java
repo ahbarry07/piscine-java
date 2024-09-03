@@ -31,8 +31,6 @@ public class DoOp {
                 default:
                     return "Error";
             }
-        }else{
-            return "Error";
         }
         return "it depend on the input.";
     }
