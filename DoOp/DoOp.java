@@ -1,6 +1,6 @@
 public class DoOp {
     public static String operate(String[] args) {
-        System.out.println("argument "+args);
+        
         if(args.length == 3){
             int val1 = Integer.parseInt(args[0]);
             int val2 = Integer.parseInt(args[2]);
@@ -31,6 +31,8 @@ public class DoOp {
                 default:
                     return "Error";
             }
+        }else{
+            return "Error";
         }
         return "it depend on the input.";
     }
