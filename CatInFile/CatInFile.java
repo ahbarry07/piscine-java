@@ -7,15 +7,28 @@ public class CatInFile {
         if(args.length == 0){
             return;
         }
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter file = new BufferedWriter(new FileWriter(args[0]));
+        // BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        // BufferedWriter file = new BufferedWriter(new FileWriter(args[0]));
         
-        String line;
-        while ((line = reader.readLine()) != null) {
-            file.write(line);
-            file.newLine();
+        // String line;
+        // while ((line = reader.readLine()) != null) {
+        //     file.write(line);
+        //     file.newLine();
+        // }
+        // file.close();
+
+         // Utilisation d'un FileOutputStream pour écrire le contenu binaire dans le fichier
+        try (InputStream input = System.in;
+            OutputStream output = new FileOutputStream(args[0])) {
+
+            byte[] buffer = new byte[1024]; // Buffer de 4 Ko pour la lecture
+            int bytesRead;
+
+            // Lire les données en blocs et les écrire dans le fichier
+            while ((bytesRead = input.read(buffer)) != -1) {
+                output.write(buffer, 0, bytesRead);
+            }
         }
-        file.close();
     }
 
 
