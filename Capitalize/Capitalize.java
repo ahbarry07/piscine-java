@@ -34,7 +34,6 @@ public class Capitalize {
         String content = "";
         for(int i = 0; i < tab.length; i++){
             if(!tab[i].isEmpty()){
-
                 content += tab[i].substring(0, 1).toUpperCase() + tab[i].substring(1).toLowerCase() + " ";
             }
         }

@@ -13,6 +13,7 @@ public class FileManager {
         file.write(content);
         file.close();
     }
+    
     public static String getContentFile(String fileName) throws IOException {
         File file = new File(fileName);
         if(!file.exists()){
@@ -20,7 +21,7 @@ public class FileManager {
         }
         StringBuilder text = new StringBuilder();
         try(FileInputStream fis = new FileInputStream(file)){
-            byte[] buffer = new byte [1024];
+            byte[] buffer = new byte [2048];
             int byteRead;
             while ((byteRead = fis.read(buffer)) != -1) {
                 text.append(new String(buffer, 0, byteRead));
@@ -29,8 +30,9 @@ public class FileManager {
             System.out.println("An error occurred while reading the file: " + e.getMessage());
         }
 
-        return text.toString();
+        return text.toString().trim();
     }
+    
     public static void deleteFile(String fileName) {
         File file = new File(fileName);
         if(!file.exists()){
