@@ -7,7 +7,8 @@ public class Cat {
         }
 
         for (String filename : args) {
-            try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
+            File file = new File(filename);
+            try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
                 String line;
                 while ((line = reader.readLine()) != null) {
                     System.out.println(line);
