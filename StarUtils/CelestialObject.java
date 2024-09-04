@@ -80,7 +80,8 @@ public class CelestialObject {
 
        return Double.compare(other.x, this.x) == 0.0 && 
             Double.compare(other.y, this.y) == 0.0 &&
-            Double.compare(other.z, this.z) == 0.0;
+            Double.compare(other.z, this.z) == 0.0 && 
+            name.equals(other.name);
     }
 
     public int hashCode(){
