@@ -22,14 +22,40 @@ public class CelestialObject {
         this.name = name;
     }
 
+    /******************** For X ****************/
     public double getX(){
         return this.x;
     }
+
+    public void setX(double newX){
+        this.x = newX;
+    }
+
+    /******************** For Y ****************/
     public double getY(){
         return this.y;
     }
+
+    public void setY(double newY){
+        this.y = newY;
+    }
+
+    /******************** For Z ****************/
     public double getZ(){
         return this.z;
+    }
+
+    public void setZ(double newZ){
+        this.z = newZ;
+    }
+
+    /********************For Name ****************/
+    public String getName(){
+        return this.name;
+    }
+
+    public void setName(String newName){
+        this.name = newName;
     }
 
     public static double getDistanceBetween(CelestialObject start, CelestialObject finalDes){
