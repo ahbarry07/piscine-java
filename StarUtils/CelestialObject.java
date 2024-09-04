@@ -1,33 +1,42 @@
 import java.util.Objects;
 
-public class CelestialObject {
-    
+public class CelestialObject{
     public static final double KM_IN_ONE_AU = 150000000;
 
     public double x;
     public double y;
     public double z;
     public String name;
-    
+    private int mass;
 
     public CelestialObject(){
-        this.x = 0.0;
+        this.x = 0.0; 
         this.y = 0.0;
         this.z = 0.0;
         this.name = "Soleil";
     }
 
-    public CelestialObject(String name, double x, double y, double z){
+    public CelestialObject(String name, double x, double y, double z, int mass) {
         this.x = x;
         this.y = y;
         this.z = z;
         this.name = name;
+        this.mass = mass;
+    }
+
+    /******************** For mass ****************/
+    public int getMass() {
+        return this.mass;
+    }
+
+    public void setMass(int mass) {
+        this.mass = mass;
     }
 
     /******************** For X ****************/
     public double getX(){
         return this.x;
-    }
+    } 
 
     public void setX(double newX){
         this.x = newX;
@@ -87,17 +96,4 @@ public class CelestialObject {
     public int hashCode(){
         return Objects.hash(x, y, z, name);
     }
-    public static void main(String[] args) {
-        CelestialObject celestialObject = new CelestialObject();
-        CelestialObject earth = new CelestialObject("Terre", 1.0, 2.0, 2.0);
-        CelestialObject earth1 = new CelestialObject("Terre", 1.0, 2.0, 2.0);
-
-        System.out.println(earth.toString());
-        System.out.println(earth.equals(earth1));
-        System.out.println(earth.equals(celestialObject));
-
-        System.out.println(earth.hashCode());
-        System.out.println(celestialObject.hashCode());
-    }
-
 }
