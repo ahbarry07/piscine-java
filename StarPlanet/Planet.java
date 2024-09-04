@@ -41,7 +41,7 @@ public class Planet extends CelestialObject{
     @Override
     public String toString(){
         double distance = getDistanceBetween(new CelestialObject(name, x, y, z), centerStar);
-        return String.format(getName()+ " circles around %s at the %.3f AU", centerStar.name, distance);
+        return String.format(getName()+ " circles around %s at the %.3f AU", centerStar.getName(), distance);
     }
 
 
