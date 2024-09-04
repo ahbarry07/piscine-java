@@ -36,16 +36,12 @@ public class Star extends CelestialObject{
 
         Star other = (Star) obj;
 
-        return Double.compare(other.x, this.x) == 0.0 && 
-            Double.compare(other.y, this.y) == 0.0 &&
-            Double.compare(other.z, this.z) == 0.0 && 
-            Double.compare(other.magnitude, this.magnitude) == 0.0 &&
-            name.equals(other.name);
+        return Double.compare(other.magnitude, this.magnitude) == 0;
+           
     }
-
     @Override
     public int hashCode(){
-        return Objects.hash(x, y, z, name, magnitude);
+        return Objects.hash(super.hashCode(), magnitude);
     }
     
     public static void main(String[] args) {
