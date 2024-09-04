@@ -11,6 +11,13 @@ public class CelestialObject {
         this.z = 0.0;
         this.name = "Soleil";
     }
+
+    public CelestialObject(String name, double x, double y, double z){
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.name = name;
+    }
     
     /******************** For X ****************/
     public double getX(){
