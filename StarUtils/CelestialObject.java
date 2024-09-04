@@ -74,7 +74,7 @@ public class CelestialObject {
 
     public boolean equals(Object obj){
        if(this == obj) return true;
-       if(this.getClass() != obj.getClass()) return false; 
+       if(this.getClass() != obj.getClass() || obj == null) return false; 
 
        CelestialObject other = (CelestialObject) obj;
 
