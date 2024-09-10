@@ -45,7 +45,7 @@ public class Character {
         if (allCharacters.isEmpty()) return "------------------------------------------\n" + //
                         "Nobody's fighting right now !\n" + //
                         "------------------------------------------";
-        return String.format("------------------------------------------\nCharacters currently fighting : \n- %s\n- %s\n------------------------------------------", 
+        return String.format("------------------------------------------\nCharacters currently fighting : \n - %s\n - %s\n------------------------------------------", 
         allCharacters.get(0).toString(), allCharacters.get(1).toString());
     }
 
