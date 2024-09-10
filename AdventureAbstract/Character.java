@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Character {
+public abstract class Character {
     
     private final int maxHealth;
     private int currentHealth;
@@ -29,20 +29,15 @@ public class Character {
     public int getMaxHealth(){
         return this.maxHealth;
     }
-
+    
     public String toString(){
         if (this.currentHealth == 0) return String.format("%s : KO", this.name);
         return String.format("%s : %d/%d", this.name, this.currentHealth, this.maxHealth);
     }
 
-    public void takeDamage(int damage){
-        if (this.currentHealth > damage) this.currentHealth -= damage;
-        else this.currentHealth = 0;
-    }
+    public abstract void takeDamage(int damage);
 
-    public void attack(Character charac){
-        charac.takeDamage(9);
-    }
+    public abstract void attack(Character charac);
 
     public static String printStatus(){
         if (allCharacters.isEmpty()) {
@@ -79,17 +74,5 @@ public class Character {
         return null;
     }
 
-    public static void main(String[] args) {
-        System.out.println(Character.printStatus());
 
-        Character aragorn = new Character("Aragorn", 20);
-        Character uruk = new Character("Uruk", 15);
-
-        System.out.println(Character.printStatus());
-
-        Character winner = Character.fight(aragorn, uruk);
-
-        System.out.println(winner.toString());
-        System.out.println(Character.printStatus());
-    }
 }
