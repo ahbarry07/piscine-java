@@ -6,7 +6,7 @@ public abstract class Character {
     private int currentHealth;
     private final String name;
     private static List<Character> allCharacters = new ArrayList<>();
-    private Weapon weapon;
+    public Weapon weapon;
 
 
     public Character(String name, int maxHealth, Weapon weapon){

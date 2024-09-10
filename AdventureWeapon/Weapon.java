@@ -16,6 +16,8 @@ public class Weapon {
         this.damage = damage;
     }
 
+    // public getWeapon
+
     @Override
     public String toString(){
         return String.format("%s deals %s damages", getName(), getDamage());
