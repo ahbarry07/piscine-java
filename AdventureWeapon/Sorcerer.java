@@ -37,7 +37,7 @@ public class Sorcerer extends Character implements Healer{
         if (ennemy.weapon == null){
             ennemy.takeDamage(10);
         }else{
-            ennemy.takeDamage(ennemy.weapon.getDamage());
+            ennemy.takeDamage(this.weapon.getDamage());
         }
 
     }

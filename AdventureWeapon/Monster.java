@@ -18,7 +18,7 @@ public class Monster extends Character{
         if (ennemy.weapon == null){
             ennemy.takeDamage(7);
         }else{
-            ennemy.takeDamage(ennemy.weapon.getDamage());
+            ennemy.takeDamage(this.weapon.getDamage());
         }
     }
 
