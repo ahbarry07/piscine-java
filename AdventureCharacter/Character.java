@@ -14,6 +14,10 @@ public class Character {
         return this.name;
     }
 
+    public int getCurrentHealth(){
+        return this.currentHealth;
+    }
+
     public int getMaxHealth(){
         return this.maxHealth;
     }
