@@ -1,8 +1,8 @@
 public class Character {
     
-    public int maxHealth;
+    public final int maxHealth;
     public int currentHealth;
-    public String name;
+    public final String name;
 
     public Character(String name, int maxHealth){
         this.name = name;
