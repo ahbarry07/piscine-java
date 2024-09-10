@@ -20,8 +20,8 @@ public class Monster extends Character{
 
     @Override
     public void takeDamage(int damage){
-        int percent = (int) Math.floor(getCurrentHealth() * damage * 0.80);
-        this.setCurrentHealth(percent);
+        int percent = (int) Math.floor(damage * 0.80);
+        this.setCurrentHealth(getCurrentHealth() - percent);
         if (this.getCurrentHealth() < 0){
             this.setCurrentHealth(0);
         }
