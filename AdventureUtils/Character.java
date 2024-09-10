@@ -44,7 +44,7 @@ public class Character {
     public static String printStatus(){
         if (allCharacters.isEmpty()) return "------------------------------------------\n" + //
                         "Nobody's fighting right now !\n" + //
-                        "------------------------------------------\n";
+                        "------------------------------------------";
                         
         StringBuilder status = new StringBuilder();
         status.append("------------------------------------------\n")
@@ -54,7 +54,7 @@ public class Character {
             status.append(" - ").append(ch.toString()).append("\n");
         }
     
-        status.append("------------------------------------------\n");
+        status.append("------------------------------------------");
         return status.toString();
     }
 
