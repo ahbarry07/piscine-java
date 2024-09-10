@@ -42,9 +42,6 @@ public class Character {
     }
 
     public static String printStatus(){
-        System.out.println("player 1" + allCharacters.get(0).toString());
-        System.out.println("player 2" + allCharacters.get(1).toString());
-
         if (allCharacters.isEmpty()) return "------------------------------------------\n" + //
                         "Nobody's fighting right now !\n" + //
                         "------------------------------------------";
