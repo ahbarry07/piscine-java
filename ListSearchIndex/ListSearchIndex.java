@@ -2,13 +2,13 @@ import java.util.*;
 
 public class ListSearchIndex {
     public static Integer findLastIndex(List<Integer> list, Integer value) {
-        if(list.contains(value)){
+        if(list != null &&list.contains(value)){
             return list.lastIndexOf(value);
         }
         return null;
     }
     public static Integer findFirstIndex(List<Integer> list, Integer value) {
-        if(list.contains(value)){
+        if(list != null &&list.contains(value)){
             return list.indexOf(value);
         }
         return null;
