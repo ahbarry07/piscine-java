@@ -17,12 +17,18 @@ public class ListSearchIndex {
         if(list.contains(value)){
             List<Integer> array = new ArrayList<>();
             for(int i = 0; i < list.size(); i++){
-                if (list.get(i) == value){
+                if ((int) list.get(i) == (int) value){
                     array.add(i);
                 }
             }
             return array;
         }
         return new ArrayList<>();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(ListSearchIndex.findLastIndex(List.of(9, 13, 89, 8, 23, 1, 0, 89), 89));
+        System.out.println(ListSearchIndex.findFirstIndex(List.of(9, 13, 89, 8, 23, 1, 0, 89), 89));
+        System.out.println(ListSearchIndex.findAllIndexes(List.of(43784, 13, 89, 8, 23, 1, 0, 89), 43784).toString());
     }
 }
