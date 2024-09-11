@@ -2,7 +2,7 @@ import java.util.List;
 
 public class ListEquals {
     public static boolean areListsEqual(List<String> list1, List<String> list2) {
-        if (list1 != null){
+        if (list1 != null && !list1.isEmpty()){
             return list1.equals(list2);
         }
         return false;
