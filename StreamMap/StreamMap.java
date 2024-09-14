@@ -26,6 +26,6 @@ public class StreamMap {
         }
 
         return s.map(val -> val.intValue())
-                .filter(num -> num > 42).collect(Collectors.toSet());
+                .filter(num -> num >= 42).collect(Collectors.toSet());
     }
 }
