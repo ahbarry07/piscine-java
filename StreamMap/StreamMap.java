@@ -14,11 +14,10 @@ public class StreamMap {
     }
 
     public static List<String> upperCaseAllString(Stream<String> s) {
-        System.out.println("input %s" + s.toString());
         if(s == null){
             return new ArrayList<>();
         }
-        return s.filter(str -> str.equals(str.toUpperCase())).toList();
+        return s.map(str -> str.toUpperCase()).toList();
     }
     
     public static Set<Integer> uniqIntValuesGreaterThan42(Stream<Double> s) {
