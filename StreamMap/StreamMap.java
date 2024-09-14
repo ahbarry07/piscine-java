@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -10,11 +11,7 @@ public class StreamMap {
         if (s == null){
             return 0;
         }
-        int count = 0;
-        s.forEach(str -> {
-            count += str.length();
-        });
-        return count;
+        return s.mapToInt(String::length).sum();
     }
 
     public static List<String> upperCaseAllString(Stream<String> s) {
@@ -31,5 +28,11 @@ public class StreamMap {
 
         return s.filter(num -> num >= 42)
             .map(val -> val.intValue()).collect(Collectors.toSet());
+    }
+
+    public static void main(String[] args) throws IOException {
+        System.out.println(StreamMap.sumOfStringLength(Stream.of("Bonjour", "le", "monde !")));
+        System.out.println(StreamMap.upperCaseAllString(Stream.of("IL", "Fait", "beaU !!")));
+        System.out.println(StreamMap.uniqIntValuesGreaterThan42(Stream.of(23.439, 42.34, 39194.4)));
     }
 }
