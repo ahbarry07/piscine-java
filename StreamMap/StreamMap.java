@@ -10,7 +10,11 @@ public class StreamMap {
         if (s == null){
             return 0;
         }
-        return (int) s.count();
+        int count = 0;
+        s.forEach(str -> {
+            count += str.length();
+        });
+        return count;
     }
 
     public static List<String> upperCaseAllString(Stream<String> s) {
