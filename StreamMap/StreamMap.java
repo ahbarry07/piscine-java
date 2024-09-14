@@ -14,7 +14,7 @@ public class StreamMap {
     }
 
     public static List<String> upperCaseAllString(Stream<String> s) {
-        System.out.println("input %s" + s);
+        System.out.println("input %s" + s.toString());
         if(s == null){
             return new ArrayList<>();
         }
