@@ -12,6 +12,6 @@ public class StreamReduce {
         if (s == null){
             return 0;
         }
-        return (int) s.mapToDouble(val -> (double) val / divider).sum();
+        return s.mapToInt(val ->  val / divider).sum();
     }
 }
