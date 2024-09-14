@@ -25,7 +25,7 @@ public class StreamMap {
             return new HashSet<>();
         }
 
-        return s.map(val -> val.intValue())
-                .filter(num -> num >= 42).collect(Collectors.toSet());
+        return s.filter(num -> num >= 42)
+            .map(val -> val.intValue()).collect(Collectors.toSet());
     }
 }
