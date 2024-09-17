@@ -8,7 +8,7 @@ public class FormatDate {
 
     public static String formatToFullText(LocalDateTime dateTime) {
         if (dateTime == null) return null;
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("'Le' dd MMMM 'de l''an' yyyy 'à' HH'h'mm'm' 'et' ss's'", Locale.FRENCH);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("'Le' dd MMM 'de l''an' yyyy 'à' HH'h'mm'm' 'et' ss's'", Locale.FRENCH);
         return dateTime.format(formatter);
     }
 
@@ -26,7 +26,7 @@ public class FormatDate {
 
 
     public static void main(String[] args) {
-        System.out.println(formatToFullText(LocalDateTime.of(2021, 8, 22, 13, 25, 46)));
+        System.out.println(formatToFullText(LocalDateTime.of(2021, 10, 22, 13, 25, 46)));
         System.out.println(formatSimple(LocalDate.of(2022, 2, 13)));
         System.out.println(formatIso(LocalTime.of(16, 18, 56, 8495847)));
     }
