@@ -4,10 +4,20 @@ import java.util.regex.Pattern;
 
 public class RegexReplace {
     public static String removeUnits(String s) {
-        if(s.matches("^[0-9]*cm.*[0-9]*€$")){
-            return s.replace("cm", "").replace("€", "");
+        
+        StringBuilder result = new StringBuilder();
+        String[] tokens = s.split(" ");
+        for (String token : tokens) {
+            if (token.matches("[0-9]+cm")) {
+                result.append(token.replace("cm", "")).append(" ");
+            } else if (token.matches("[0-9]+€")) {
+                result.append(token.replace("€", "")).append(" ");
+            } else {
+                result.append(token).append(" ");
+            }
         }
-        return s;
+        // Retourner la chaîne modifiée avec les unités retirées
+        return result.toString().trim();
     }
     
     public static String obfuscateEmail(String email) {
@@ -53,7 +63,7 @@ public class RegexReplace {
    
 
     public static void main(String[] args) throws IOException {
-        System.out.println(RegexReplace.removeUnits("32cm et 50€"));
+        System.out.println(RegexReplace.removeUnits("15323cm et 50€"));
         System.out.println(RegexReplace.removeUnits("32 cm et 50 €"));
         System.out.println(RegexReplace.removeUnits("32cms et 50€!"));
         
