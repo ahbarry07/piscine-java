@@ -16,6 +16,7 @@ public class ParseDate {
     }
 
     public static LocalTime parseTimeFormat(String stringDate) {
+        if (stringDate == null) return null;
         String heure = "";
         String periode = "";
         String minute = "";
