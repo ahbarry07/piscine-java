@@ -35,7 +35,7 @@ public class RegexReplace {
         } else {
             // If length is greater than 3, keep the first 3 characters and add '***'
             if (username.length() > 3) {
-                username = username.substring(0, 3) + "***";
+                username = username.substring(0, 3) + "*".repeat(username.length()-3);
             }
         }
         
