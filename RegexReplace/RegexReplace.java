@@ -31,7 +31,8 @@ public class RegexReplace {
         // Obfuscate the username
         if (username.contains("-") || username.contains(".") || username.contains("_")) {
             // Replace characters following '-', '.', or '_' with '*'
-            username = username.replaceAll("([-. _]).*", "$1***");
+            int size = username.split("[-._]")[1].length();
+            username = username.replaceAll("([-. _]).*", "$1" + "*".repeat(size));
         } else {
             // If length is greater than 3, keep the first 3 characters and add '***'
             if (username.length() > 3) {
