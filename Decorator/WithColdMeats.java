@@ -7,11 +7,11 @@ public class WithColdMeats extends RacletteDecorator {
 
     @Override
     public int getCalories(){
-        return this.getCalories() + 350;
+        return super.getCalories() + 350;
     }
 
     @Override
     public String getIngredients(){
-        return this.getIngredients() + ", charcuterie";
+        return super.getIngredients() + ", charcuterie";
     }
 }

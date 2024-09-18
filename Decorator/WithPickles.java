@@ -1,16 +1,16 @@
 
 public class WithPickles extends RacletteDecorator{
-
+    
     public WithPickles(Raclette raclette){
         super(raclette);
     }
     @Override
     public int getCalories(){
-        return this.getCalories() + 10;
+        return super.getCalories() + 50;
     }
 
     @Override
     public String getIngredients(){
-        return this.getIngredients() + ", cornichons";
+        return super.getIngredients() + ", cornichons";
     }
 }
