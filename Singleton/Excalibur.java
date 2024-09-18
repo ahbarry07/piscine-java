@@ -1,6 +1,9 @@
 
 public class Excalibur{
+    
     private String name;
+    private static Excalibur insExcalibur;
+
     private Excalibur(String name){
         this.name = name;
     }
@@ -10,7 +13,10 @@ public class Excalibur{
     }
 
     public static Excalibur getInstance(){
-        return new Excalibur("Sword");
+        if (insExcalibur == null){
+            return new Excalibur("Sword");
+        }
+        return insExcalibur;
     }
 
     public static void main(String[] args)  {
