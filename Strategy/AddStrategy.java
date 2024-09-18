@@ -1,5 +1,5 @@
 
-public class AddStrategy extends OperationStrategy {
+public class AddStrategy implements OperationStrategy {
     
     @Override
     public int execute(int a, int b){
